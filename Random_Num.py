@@ -4,13 +4,13 @@ import sys
 
 seed(1)
 class Random_Num_Guess:
-    def __init__(self,min=0,max=100,toggle=0):
+    def __init__(self,mode,min=0,max=100):
         self.guesses = 0
         self.guess_count = 0
         self.number = n.random.randint(min,max)
         self.min = min
         self.max = max
-        self.toggle = toggle
+        self.mode = mode
     
     def get_guess(self):
         guess = input(f"Please enter your guess between " + str(self.min) + " and " + str(self.max) + ": " )
@@ -43,17 +43,18 @@ class Random_Num_Guess:
         return self.min <= int(num) <= self.max
     
     def play_again (self):
-        if self.toggle == 0:
-            again = input("Play again [Y,N]? Game will be run with random value range between 0-1,000: ")
-            if again == "Y":
+        again = input("Play again [Y,N]? Game will be run with random value range between 0-1,000: ")
+        if again == "Y":
+            if self.mode == 0:
                 next_game = Random_Num_Guess(0,n.random.randint(1,1000))
                 next_game.play()
             else:
-                exit()
+                next_game = Random_Num_Guess(1,n.random.randint(1,1000))
+                print("Running Binary Search for number with range of " + str(next_game.min) + " " + str(next_game.max))
+                next_game.guess_num_binary_search(next_game.min,next_game.max)
         else:
-            next_game = Random_Num_Guess(0,n.random.randint(1,1000))
-            print("Running Binary Search for number with range of " + str(next_game.min) + " " + str(next_game.max))
-            next_game.guess_num_binary_search(next_game.min,next_game.max)
+            exit()
+ 
             
        
     def play(self):
@@ -71,12 +72,28 @@ class Random_Num_Guess:
         self.play_again()
     
      
-if (len(sys.argv) < 2):
-    newgame = Random_Num_Guess()
-    newgame.play()
+if (len(sys.argv) == 1):
+    print("Usage: Enter parameter 0 for manual play, 1 for Binary Search algorithm")
+    exit()
+elif (len(sys.argv) == 2):
+    if (int(sys.argv[1])== 0):
+        newgame = Random_Num_Guess(0)
+        newgame.play()
+    elif (int(sys.argv[1])==1):
+        newgame = Random_Num_Guess(1)
+        newgame.guess_num_binary_search(newgame.min,newgame.max)
+    else:
+        print("Not a valid argument, exiting " + sys.argv[1])
+        exit()
 elif (len(sys.argv) == 4):
-    newgame = Random_Num_Guess(int(sys.argv[1]),int(sys.argv[2]),1)
-    newgame.guess_num_binary_search(newgame.min,newgame.max)
-else:
-    newgame = newgame = Random_Num_Guess(int(sys.argv[1]),int(sys.argv[2]))
-    newgame.play()
+    if (int(sys.argv[1])==0):
+        newgame = Random_Num_Guess(0,int(sys.argv[2]),int(sys.argv[3]))
+        newgame.play()
+    elif (int(sys.argv[1])==2):
+        newgame = Random_Num_Guess(1,int(sys.argv[2]),int(sys.argv[3]))
+        newgame.guess_num_binary_search(newgame.min,newgame.max)
+    else:
+        print("Not a valid argument, exiting")
+        exit()
+
+
