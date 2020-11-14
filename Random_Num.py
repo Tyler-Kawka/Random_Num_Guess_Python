@@ -5,13 +5,14 @@ import sys
 
 seed(1)
 class Random_Num_Guess:
+    #Constructor
     def __init__(self,mode,min=0,max=100):
         self.guesses = 0
         self.number = n.random.randint(min,max)
         self.min = min
         self.max = max
         self.mode = mode
-    
+    #Get guesses from user
     def get_guess(self):
         guess = input(f"Please enter your guess between " + str(self.min) + " and " + str(self.max) + ": " )
         if self.valid_guess(guess):
@@ -45,7 +46,7 @@ class Random_Num_Guess:
     #Checking to see if guess out of range of min and max
     def valid_guess(self,num):
         return self.min <= int(num) <= self.max
-    
+    #Play again function to restart game
     def play_again (self):
         again = input("Play again [Y,N]? : ")
         if again == "Y":
@@ -60,7 +61,7 @@ class Random_Num_Guess:
                 next_game.guess_num_binary_search(next_game.min,next_game.max)
         else:
             exit()
- 
+    #Manual play loop
     def play(self):
         while 1:
             self.guesses += 1
