@@ -12,6 +12,7 @@ class Random_Num_Guess:
         self.min = min
         self.max = max
         self.mode = mode
+
     #Get guesses from user
     def get_guess(self):
         guess = input(f"Please enter your guess between " + str(self.min) + " and " + str(self.max) + ": " )
@@ -23,7 +24,6 @@ class Random_Num_Guess:
     
     #Optional function that will run binary search and guess the number using algorithm
     def guess_num_binary_search(self,start,end):
-
         #double divide sign to floor the number
         middle = (start + end)//2
         #keep track of guesses
@@ -46,6 +46,7 @@ class Random_Num_Guess:
     #Checking to see if guess out of range of min and max
     def valid_guess(self,num):
         return self.min <= int(num) <= self.max
+
     #Play again function to restart game
     def play_again (self):
         again = input("Play again [Y,N]? : ")
@@ -61,6 +62,7 @@ class Random_Num_Guess:
                 next_game.guess_num_binary_search(next_game.min,next_game.max)
         else:
             exit()
+            
     #Manual play loop
     def play(self):
         while 1:
