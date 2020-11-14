@@ -6,16 +6,16 @@ There are multiple ways to run this code based on the parameters passed into it.
 ```
 python Random_Num.py 0
 ```
-which will run the code in manual mode with the default range of guessing values to be 0-100. The user is able to pass two additional parameters into the function which will change the default value of the range:
+The above code will run the game in manual mode with the default range of guessing values to be 0-100. The user is able to pass two additional parameters into the function which will change the default value of the range:
 ```
 python Random_Num.py 0 0 500
 ```
-which will now run the code in manual mode but now the range of values in which the number can lie is between 0 and 500. The same examples can be run except now the binary search algorithm will run the game for us:
+The above code will run the game in manual mode but now the range of values in which the number can lie is between 0 and 500. The same examples can be run except now the binary search algorithm will run the game for us:
 ```
 python Random_Num.py 1 
 python Random_Num.py 1 0 500
 ```
-which will run the code just the same as above except now we are using our binary search algorithm to play the game for us.
+The above code will run the game just the same as the manual code except now we are using our binary search algorithm to play the game for us.
 
 # Play again
 After manually beating the game or once the binary search algorithm finishes the game, the user will be prompted with a question if they want to play again, and this can be answered with either Y for yes or N for no. If Y is typed the code will then rerun the same mode that was run the original time and depending on which mode was played a difference random range of values will be selected from a larger subset range. For example, if manual mode is played again, any random range will be selected from 0:1,000 and for binary search mode the range increases to 0:30,000 because of how quickly the algorithm performs.
