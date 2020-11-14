@@ -81,8 +81,8 @@ Guess 14 was: 49197
 Number is 49197, Binary Search took 14 guesses!
 Play again [Y,N]? : Y
 
-Game will be run on random value range between 0-30000
-Running Binary Search for number with range of 0 28887
+Game will be run on random value range between 0 : 30000
+Running Binary Search for number with range of 0 : 28887
 Guess 1 was: 14443
 Guess 2 was: 21665
 Guess 3 was: 18054

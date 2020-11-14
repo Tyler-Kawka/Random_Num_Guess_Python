@@ -52,13 +52,13 @@ class Random_Num_Guess:
         again = input("Play again [Y,N]? : ")
         if again == "Y":
             if self.mode == 0:
-                print("Game will be run on random value range between 0-1000")
+                print("Game will be run on random value range between 0 : 1000")
                 next_game = Random_Num_Guess(0,0,n.random.randint(1,1000))
                 next_game.play()
             else:
-                print("Game will be run on random value range between 0-30000")
+                print("Game will be run on random value range between 0 : 30000")
                 next_game = Random_Num_Guess(1,0,n.random.randint(1,30000))
-                print("Running Binary Search for number with range of " + str(next_game.min) + " " + str(next_game.max))
+                print("Running Binary Search for number with range of " + str(next_game.min) + " : "  + str(next_game.max))
                 next_game.guess_num_binary_search(next_game.min,next_game.max)
         else:
             exit()
