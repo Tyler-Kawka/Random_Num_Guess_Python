@@ -59,7 +59,7 @@ class Random_Num_Guess:
             else:
                 print("Game will be run on random value range between 0 : 30000")
                 next_game = Random_Num_Guess(1,0,n.random.randint(1,30000))
-                print("Running Binary Search for number with range of " + str(next_game.min) + " : "  + str(next_game.max))
+                print("Running Binary Search algorithm on range" + str(next_game.min) + " : "  + str(next_game.max))
                 next_game.guess_num_binary_search(next_game.min,next_game.max)
         else:
             exit()
