@@ -100,3 +100,6 @@ Guess 14 was: 19115
 Number is 19115, Binary Search took 14 guesses!
 Play again [Y,N]? : N
 ```
+
+### Author
+Tyler Kawka

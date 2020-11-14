@@ -1,4 +1,5 @@
 #Program that is based off random number guesser, incorporating a feature as well to allow user to toggle on binary search algorithm to find the number
+#Author Tyler Kawka
 from random import seed
 import numpy as n
 import sys
