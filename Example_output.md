@@ -40,7 +40,7 @@ Too high, try something lower
 Please enter your guess between -50 and 100: 83
 Congratulations you have guessed the number!
 It only took you 8 tries!
-
+Play again [Y,N]? : N
 ```
 
 # Example 3: Binary Search Default Value
